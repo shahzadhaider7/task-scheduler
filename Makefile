@@ -5,10 +5,10 @@ run:
 	go run main.go
 
 format:
-	#action
+	${DOCKRUN} bash ./scripts/format.sh
 
 check: format
-	#action
+	${DOCKRUN} bash ./scripts/check.sh
 
 test: check
 	#action
