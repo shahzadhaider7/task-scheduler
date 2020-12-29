@@ -1,7 +1,0 @@
-FROM golang:1.14
-
-RUN apt-get update
-
-ENV GO111MODULE=on
-
-RUN go get github.com/golangci/golangci-lint/cmd/golangci-lint
