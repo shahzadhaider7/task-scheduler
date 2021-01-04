@@ -8,7 +8,7 @@ import (
 
 func TestTask_Map(t *testing.T) {
 	type fields struct {
-		ID        int
+		ID        string
 		Name      string
 		CreatedAt time.Time
 		Status    string
@@ -22,7 +22,7 @@ func TestTask_Map(t *testing.T) {
 		{
 			name: "success - convert task struct to map",
 			fields: fields{
-				ID:        1,
+				ID:        "1",
 				Name:      "Shahzad",
 				CreatedAt: time.Time{},
 				Status:    "active",
@@ -33,7 +33,7 @@ func TestTask_Map(t *testing.T) {
 				},
 			},
 			want: map[string]interface{}{
-				"id":         1,
+				"id":         "1",
 				"name":       "Shahzad",
 				"created_at": time.Time{},
 				"status":     "active",
@@ -63,7 +63,7 @@ func TestTask_Map(t *testing.T) {
 
 func TestTask_Names(t *testing.T) {
 	type fields struct {
-		ID        int
+		ID        string
 		Name      string
 		CreatedAt time.Time
 		Status    string
@@ -77,7 +77,7 @@ func TestTask_Names(t *testing.T) {
 		{
 			name: "success - task field names",
 			fields: fields{
-				ID:        1,
+				ID:        "1",
 				Name:      "Shahzad",
 				CreatedAt: time.Time{},
 				Status:    "active",
