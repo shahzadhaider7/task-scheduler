@@ -7,7 +7,7 @@ import (
 
 // Student holds information for a student
 type Task struct {
-	ID        int                    `json:"id" structs:"id"  bson:"_id" db:"id"`
+	ID        string                 `json:"id" structs:"id"  bson:"_id" db:"id"`
 	Name      string                 `json:"name" structs:"name"  bson:"name" db:"name"`
 	CreatedAt time.Time              `json:"created_at" structs:"created_at" bson:"created_at" db:"created_at"`
 	Status    string                 `json:"status" structs:"status" bson:"status" db:"status"`
