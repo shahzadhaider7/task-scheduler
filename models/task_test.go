@@ -12,7 +12,7 @@ func TestTask_Map(t *testing.T) {
 		Name      string
 		CreatedAt time.Time
 		Status    string
-		Data      map[string]interface{}
+		Data      string
 	}
 	var tests = []struct {
 		name   string
@@ -24,24 +24,16 @@ func TestTask_Map(t *testing.T) {
 			fields: fields{
 				ID:        "1",
 				Name:      "Shahzad",
-				CreatedAt: time.Time{},
+				CreatedAt: time.Now().UTC().Truncate(time.Minute),
 				Status:    "active",
-				Data: map[string]interface{}{
-					"x": "1",
-					"y": "2",
-					"z": "3",
-				},
+				Data:      "convert task struct to map",
 			},
 			want: map[string]interface{}{
 				"id":         "1",
 				"name":       "Shahzad",
-				"created_at": time.Time{},
+				"created_at": time.Now().UTC().Truncate(time.Minute),
 				"status":     "active",
-				"data": map[string]interface{}{
-					"x": "1",
-					"y": "2",
-					"z": "3",
-				},
+				"data":       "convert task struct to map",
 			},
 		},
 	}
@@ -67,7 +59,7 @@ func TestTask_Names(t *testing.T) {
 		Name      string
 		CreatedAt time.Time
 		Status    string
-		Data      map[string]interface{}
+		Data      string
 	}
 	tests := []struct {
 		name   string
@@ -79,13 +71,9 @@ func TestTask_Names(t *testing.T) {
 			fields: fields{
 				ID:        "1",
 				Name:      "Shahzad",
-				CreatedAt: time.Time{},
+				CreatedAt: time.Now(),
 				Status:    "active",
-				Data: map[string]interface{}{
-					"x": "1",
-					"y": "2",
-					"z": "3",
-				},
+				Data:      "convert task struct to map",
 			},
 			want: []string{"id", "name", "created_at", "status", "data"},
 		},
